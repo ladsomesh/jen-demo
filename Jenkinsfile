@@ -9,7 +9,7 @@ pipeline {
                 sh('sudo -i')
                 sh('cd /')
                 sh('cd /home/somesh/dockSomesh')
-                sh('docker build -t jen-image .')
+                sh('docker build -t someshlad/jen-image .')
             }
         }
         stage('Publish to Hub/Registry') {
@@ -18,7 +18,7 @@ pipeline {
                 echo 'Publishing the image to Docker-Hub...'
                 sh"""
                 sudo -i
-                docker image push --all-tags jen-image
+                docker image push --all-tags someshlad/jen-image
                 """
                 echo '...Image successfully pushed'
             }
