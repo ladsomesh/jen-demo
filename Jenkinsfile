@@ -20,7 +20,7 @@ pipeline {
                 sudo -i
                 cd /
                 cd /home/somesh/dockSomesh
-                docker push someshlad/jen-image
+                docker image push someshlad/jen-image
                 '''
                 echo '...Image successfully pushed'
             }
