@@ -6,7 +6,7 @@ pipeline {
             steps {
                 echo 'Image building started....'
                 sh('cd /home/somesh/dockSomesh')
-                sh('docker build -t SomeshLad/jen-image .')
+                sh('docker build -t jen-image .')
             }
         }
         stage('Publish to Hub/Registry') {
@@ -15,7 +15,7 @@ pipeline {
                 echo 'Publishing the image to Docker-Hub...'
                 sh'''
                 cd dockSomesh
-                docker push SomeshLad/jen-image
+                docker push someshlad/jen-image
                 '''
                 echo '...Image successfully pushed'
             }
