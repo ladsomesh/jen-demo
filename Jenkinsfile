@@ -8,7 +8,7 @@ pipeline {
                 sh('docker login -u someshlad -p PASS@p1234')
                 sh('sudo -i')
                 sh('cd ')
-                sh('cd /dockSomesh')
+                sh('cd home/somesh/dockSomesh')
                 sh('docker build -t jen-image .')
             }
         }
