@@ -18,7 +18,7 @@ pipeline {
                 echo 'Publishing the image to Docker-Hub...'
                 sh"""
                 sudo -i
-                docker image push --all-tags someshlad/jen-image
+                docker image push --all-tags jen-image
                 """
                 echo '...Image successfully pushed'
             }
