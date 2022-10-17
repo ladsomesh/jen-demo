@@ -17,7 +17,9 @@ pipeline {
                 echo "Connected to Docker-Hub"
                 echo 'Publishing the image to Docker-Hub...'
                 sh'''
-                cd dockSomesh
+                sudo -i
+                cd /
+                cd /home/somesh/dockSomesh
                 docker push someshlad/jen-image
                 '''
                 echo '...Image successfully pushed'
