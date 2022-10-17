@@ -16,12 +16,10 @@ pipeline {
             steps {  
                 echo "Connected to Docker-Hub"
                 echo 'Publishing the image to Docker-Hub...'
-                sh'''
+                sh"""
                 sudo -i
-                cd /
-                cd /home/somesh/dockSomesh
-                docker image push someshlad/jen-image
-                '''
+                docker image push --all-tags someshlad/jen-image
+                """
                 echo '...Image successfully pushed'
             }
         }
