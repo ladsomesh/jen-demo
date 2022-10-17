@@ -6,7 +6,7 @@ pipeline {
             steps {
                 echo 'Image building started....'
                 sh('docker login -u someshlad -p PASS@p1234')
-                sh('su - somesh')
+                sh('sudo -i')
                 sh('cd ')
                 sh('cd /dockSomesh')
                 sh('docker build -t jen-image .')
