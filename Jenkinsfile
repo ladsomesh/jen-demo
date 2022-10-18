@@ -8,7 +8,7 @@ pipeline {
         stage('Build Docker Image') {
             steps {
                 echo 'Image building started....'
-                sh("docker login -u $user_pass_USR -p $user_pass_PWD")
+                sh("docker login -u $user_pass_USR -p $user_pass_PSW")
                 sh('sudo -i')
                 sh('cd /')
                 sh('cd /home/somesh/dockSomesh')
