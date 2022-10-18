@@ -1,11 +1,14 @@
 pipeline {
     agent any
 
+    environment{
+        user_pass=credentials('dock-cred')
+    }
     stages {
         stage('Build Docker Image') {
             steps {
                 echo 'Image building started....'
-                sh("docker login -u someshlad -p PASS@p1234")
+                sh("docker login -u $user_pass_USR -p $user_pass_PWD")
                 sh('sudo -i')
                 sh('cd /')
                 sh('cd /home/somesh/dockSomesh')
