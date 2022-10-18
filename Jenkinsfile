@@ -4,7 +4,7 @@ pipeline {
     stages {
         stage('Build Docker Image') {
             environment{
-                DOCK_CREDS = credentials('dock-cred')
+                DOCK_CREDS=credentials('dock-creds')
             }
             steps {
                 echo 'Image building started....'
