@@ -1,0 +1,19 @@
+FROM ubuntu
+LABEL "about" ="LABEL is used to add some metadata to the image. if we use the same label as the base image and the most recent label value is applied. "
+MAINTAINER somesh
+RUN apt install update && apt install -y nginx
+WORKDIR /changedir
+#CMD ["echo","Hello-world Again"]
+ENTRYPOINT ["echo","Hellow"]
+#COPY index.html /home/shubham_garud
+ADD index.html .
+COPY tbc.txt .
+RUN cat index.html > /var/www/html/index.nginx-debian.html
+RUN service nginx start
+CMD ["bash"]
+
+
+
+#COPY to-be-copied /home/
+#ADD robots.txt ../
+EXPOSE 8080

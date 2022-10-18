@@ -10,9 +10,10 @@ pipeline {
                 sh('cd /')
                 sh('cd /home/somesh/dockSomesh')
                 sh('docker build -t someshlad/jen-image .')
+                echo '...Image successfully built'
             }
         }
-        stage('Publish to Hub/Registry') {
+        stage('Publish to DockerHub') {
             steps {  
                 echo "Connected to Docker-Hub"
                 echo 'Publishing the image to Docker-Hub...'
@@ -23,7 +24,7 @@ pipeline {
                 echo '...Image successfully pushed'
             }
         }
-        stage('pull image from hub/registry') {
+        stage('pull image from DockerHub') {
             steps {
                 echo 'Pulling the image from docker-hub...'
                 sh('docker pull someshlad/jen-image')
