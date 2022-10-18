@@ -4,11 +4,11 @@ pipeline {
     stages {
         stage('Build Docker Image') {
             environment{
-                DOCK-CREDS = credentials('dock-cred')
+                DOCK_CREDS = credentials('dock-cred')
             }
             steps {
                 echo 'Image building started....'
-                sh("docker login -u ${DOCK-CREDS} -p ${DOCK-CREDS}")
+                sh("docker login -u ${DOCK_CREDS} -p ${DOCK_CREDS}")
                 sh('sudo -i')
                 sh('cd /')
                 sh('cd /home/somesh/dockSomesh')
