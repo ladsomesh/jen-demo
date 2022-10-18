@@ -2,7 +2,7 @@ pipeline {
     agent any
 
     environment{
-        user_pass=credentials('dock-cred')
+        user_pass=credentials('49af2691-e091-4b37-8adc-4020466c488f')
     }
     stages {
         stage('Build Docker Image') {
