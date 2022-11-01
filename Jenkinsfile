@@ -2,16 +2,13 @@ pipeline {
     agent any
 
     environment{
-        user_pass=credentials('4a6a05ca-0f5a-4184-bf68-7e13200c4027')
+        user_pass=credentials('docker-cred')
     }
     stages {
         stage('Build Docker Image') {
             steps {
                 echo 'Image building started....'
                 sh("docker login -u $user_pass_USR -p $user_pass_PSW")
-                sh('sudo -i')
-                sh('cd /')
-                sh('cd /home/somesh/dockSomesh')
                 sh('docker build -t someshlad/jen-image .')
                 echo '...Image successfully built'
             }
@@ -20,10 +17,7 @@ pipeline {
             steps {  
                 echo "Connected to Docker-Hub"
                 echo 'Publishing the image to Docker-Hub...'
-                sh"""
-                sudo -i
-                docker image push --all-tags someshlad/jen-image
-                """
+                sh("docker image push --all-tags someshlad/jen-image")
                 echo '...Image successfully pushed'
             }
         }
