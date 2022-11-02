@@ -7,15 +7,15 @@ pipeline {
     stages {
         stage('Build Docker Image') {
             steps {
-                echo 'Image building started....'
                 sh("docker login -u $user_pass_USR -p $user_pass_PSW")
+                echo "Connected to Docker-Hub"
+                echo 'Image building started....'
                 sh('docker build -t someshlad/jen-image .')
                 echo '...Image successfully built'
             }
         }
         stage('Publish to DockerHub') {
             steps {  
-                echo "Connected to Docker-Hub"
                 echo 'Publishing the image to Docker-Hub...'
                 sh("docker image push --all-tags someshlad/jen-image")
                 echo '...Image successfully pushed'
