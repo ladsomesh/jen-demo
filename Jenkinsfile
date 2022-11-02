@@ -8,7 +8,7 @@ pipeline {
         stage('Build Docker Image') {
             steps {
                 sh("docker login -u $user_pass_USR -p $user_pass_PSW")
-                echo "Connected to Docker-Hub"
+                echo "Connected to Docker-Hub!"
                 echo 'Image building started....'
                 sh('docker build -t someshlad/jen-image .')
                 echo '...Image successfully built'
